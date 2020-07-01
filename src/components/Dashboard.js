@@ -89,11 +89,11 @@ export default class Todolist extends Component{
 
     fetch_weather = async (loc) => {
         const w_data = await WeatherService(loc);
-        console.log(w_data.current.weather_descriptions[0]);
+        console.log(w_data.currently);
         this.setState({
             weather :{
-                temp: w_data.current.temperature,
-                desc : w_data.current.weather_descriptions[0]
+                temp:Math.ceil(( w_data.currently.temperature -32 ) *5/9),
+                desc : w_data.currently.summary
             }
         });
     }

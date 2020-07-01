@@ -3,7 +3,6 @@ import axios from 'axios';
 
 export const UserRegistration = data => {
     
-    console.log('hi')
     return axios({
         method: 'post',
         url: 'https://cors-anywhere.herokuapp.com/https://shashi-express-back-11.herokuapp.com/api/user/register',

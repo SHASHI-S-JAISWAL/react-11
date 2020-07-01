@@ -2,6 +2,16 @@
     display: inline-block;
 
 }
+#rt{
+    
+    background-size: cover;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),url(bck2.png) ;
+    
+}
+
 #d1{
     color: aqua;
     border-style: solid;
@@ -16,7 +26,7 @@
 	font-size: 36px;
 	line-height: 42px;
 	text-transform: uppercase;
-	text-shadow: 0 2px white, 0 3px #777;
+    text-shadow: 0 2px white, 0 3px #777;
 }
  h2 {
 	margin: 1em 0 0.5em 0;
@@ -24,7 +34,8 @@
 	font-weight: normal;
 	font-size: 30px;
 	line-height: 40px;
-	font-family: 'Orienta', sans-serif;
+    font-family: 'Orienta', sans-serif;
+    text-align: center;
 }
 
  h3 {
@@ -58,4 +69,7 @@
     text-align: center;
     background-color: #aaf;
     box-sizing: border-box;
+  }
+  link{
+      text-align: center;
   }

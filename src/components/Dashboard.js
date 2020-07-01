@@ -119,14 +119,14 @@ export default class Todolist extends Component{
 
     render(){
         return(
-            <div className={this.classes.root} style={{background: "linear-gradient(#e66465, #9198e5) ",height: '100%', position: 'absolute', left: '0px', width: '100%', overflow: 'hidden'}} spacing={3}>
+            <div id="rt" className={this.classes.root} style={{height: '100%', position: 'absolute', width: '100%', overflow: 'hidden'}} spacing={3}>
                 < Grid container spacing={3}  >
                     <Grid item xs={6}>
-                         <h1 style = {{  marginLeft : 100 }}>
+                         <h1 style = {{  marginLeft : 100 , marginTop : 100,color: "white",textShadow: "0 3px 0 black" }}>
                              Welcome to the Dashboard 
                         </h1>
                         <Button
-                            style = {{  marginLeft : 100 }}
+                            style = {{ marginTop:10, marginLeft : 100 }}
                             width = "70%"
                             variant="contained"
                             color="primary"
@@ -168,20 +168,23 @@ export default class Todolist extends Component{
                                 </CardActions>
                             </Card>
                         </Paper> */}
-                        <div style={{ border: '20px red dotted', borderRightColor: 'green' }}>
-                            <h2>Covid -19 India update</h2>
-                            <p>Number of total cases in India : {this.state.corona}</p>
-                            <Link href='https://www.worldometers.info/coronavirus/'>
-                                 Get Details
+                        <div style={{  marginTop :100 }}>
+                            <h2 style ={{color: "white",textShadow: "0 3px 0 black"}}>Covid -19 India update</h2>
+                            
+                            <p style={{textAlign :"center",color: "white",textShadow: "0 3px 0 black"}}>Number of total cases in India : {this.state.corona}
+                            <br></br>
+                            <Link href='https://www.worldometers.info/coronavirus/' style ={{color: "white",textShadow: "0 3px 0 black"}}>
+                                 Click here to Get Details
                              </Link>
+                             </p>
                          </div>
                      </Grid>
                     <Grid item xs={12}>
                         <div id ="test1">
-                            <h2> Enter location for weather forecast and temperature </h2>
-                            <TextField onChange = {(event) =>this.setState({address : event.target.value})}></TextField>
+                            <h2 style ={{color: "white",textShadow: "0 3px 0 black"}}> Enter location for weather forecast and temperature </h2>
+                            <TextField label= "eg.,Delhi" onChange = {(event) =>this.setState({address : event.target.value})}></TextField>
                             <Button
-                            style = {{  marginLeft : 100 }}
+                            style = {{  marginTop:10 ,marginLeft : 100 }}
                             width = "50%"
                             variant="contained"
                             color="primary"
@@ -191,9 +194,9 @@ export default class Todolist extends Component{
                             Send Request
                             </Button>
                             {this.state.weather.temp !==''?
-                            <div>
-                            <h3>Average temperature : {this.state.weather.temp}&deg; C</h3>
-                            <h3>Forecast for the day : {this.state.weather.desc}</h3>
+                            <div style ={{ marginTop : 20}}>
+                            <h3 style ={{color: "white",textShadow: "0 3px 0 black"}}>Average temperature : {this.state.weather.temp}&deg; C</h3>
+                            <h3 style ={{color: "white",textShadow: "0 3px 0 black"}} >Forecast for the day : {this.state.weather.desc}</h3>
                             </div>
                             : <div></div>}
 

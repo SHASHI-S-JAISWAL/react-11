@@ -100,11 +100,19 @@ export default function SignInSide() {
       password: password
     };
     const loginResult = await LoginService(data);
-    console.log(loginResult);
+    console.log(loginResult.data);
     if (loginResult.status === 200) {
-      alert('logged in ..');
-      setAuth('Success') ;
+      if ( loginResult.data === 'Invalid Password' || loginResult.data ==='Email Doesnt exists'){
+        alert('Username or Password Invalid');
+      }
+      else{
+        alert('logged in ..');
+        setAuth('Success') ;
+      }
     }
+    else if (loginResult.status === 400) {
+        alert('Username or Password Invalid');
+      }
     else{
       alert('Username or Password Invalid');
       setEmail('');

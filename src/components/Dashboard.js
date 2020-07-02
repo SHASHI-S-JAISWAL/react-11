@@ -13,7 +13,7 @@ import './Dashboard.css';
 // import CardActions from '@material-ui/core/CardActions';
 // import CardContent from '@material-ui/core/CardContent';
 // import CardMedia from '@material-ui/core/CardMedia';
-import { HashRouter as Router, Route, Redirect, Switch  } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Switch ,Link as Link1 } from "react-router-dom";
 import TodoApp from "./TodoApp" ;
 import Link from '@material-ui/core/Link';
 
@@ -125,7 +125,7 @@ export default class Todolist extends Component{
                          <h1 style = {{  marginLeft : 100 , marginTop : 100,color: "white",textShadow: "0 3px 0 black" }}>
                              Welcome to the Dashboard 
                         </h1>
-                        <Button
+                        {/* <Button
                             style = {{ marginTop:10, marginLeft : 100 }}
                             width = "70%"
                             variant="contained"
@@ -133,7 +133,10 @@ export default class Todolist extends Component{
                             onClick = {this.direct_todo}
                             >
                             Make To do list =>
-                            </Button>
+                            </Button> */}
+                        <Link1 color="inherit" to="/TodoApp" style = {{ marginTop:10, marginLeft : 100 }} >
+                        Make To do list =>
+                        </Link1>
                     </Grid>
                     <Grid item xs={6} >
                         {/* <Paper className={this.classes.paper}>

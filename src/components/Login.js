@@ -3,7 +3,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import { HashRouter as Router, Route, Redirect, Switch,Link  } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect, Switch,Link,useHistory  } from "react-router-dom";
 //import FormControlLabel from '@material-ui/core/FormControlLabel';
 //import Checkbox from '@material-ui/core/Checkbox';
 import Link1 from '@material-ui/core/Link';
@@ -16,7 +16,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import LoginService from '../services/LoginService';
 //import { RootRef } from '@material-ui/core';
 import Dashboard from './Dashboard';
-
+import Fade from '@material-ui/core/Fade';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 function Copyright() {
   return (
@@ -29,6 +30,12 @@ function Copyright() {
       {'.'}
     </Typography>
   );
+}
+
+function  navdash () {
+  
+    
+  
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -90,24 +97,29 @@ export default function SignInSide() {
   const [email, setEmail] = useState('');
   const [password,setPassword] = useState('');
   const [auth,setAuth ] = useState(''); 
+  const [loading, setLoading] = React.useState(false);
+  const [nav,setNav] = React.useState(false);
   
   const classes = useStyles();
+  const history = useHistory();
 
   const logintry = async (e) => {
-    
+    setLoading(true);
     const data = {
       email: email,
       password: password
     };
     const loginResult = await LoginService(data);
     console.log(loginResult.data);
+    setLoading(false);
     if (loginResult.status === 200) {
       if ( loginResult.data === 'Invalid Password' || loginResult.data ==='Email Doesnt exists'){
         alert('Username or Password Invalid');
       }
       else{
         alert('logged in ..');
-        setAuth('Success') ;
+        setNav(true);
+        //setAuth('Success') ;
       }
     }
     else if (loginResult.status === 400) {
@@ -119,6 +131,15 @@ export default function SignInSide() {
       setPassword('');
     }
   };
+  if(nav === true){
+    
+   history.push("/Dashboard");
+    // const { history } = this.props;
+    //  history.push("/Dashboard")
+    // // return(
+       //<Redirect  to="/Dashboard" />
+     //)
+  }
 
   return (
     <Grid container component="main" className={classes.root}>
@@ -157,7 +178,7 @@ export default function SignInSide() {
               onChange = { (event) => {setPassword(event.target.value)}}
               autoComplete="current-password"
             />
-            
+            <Link1 to="/Dashboard" >
             <Button
               fullWidth
               variant="contained"
@@ -167,6 +188,7 @@ export default function SignInSide() {
             >
               Sign In
             </Button>
+            </Link1>
             <Grid container>
               <Grid item xs>
                
@@ -177,15 +199,26 @@ export default function SignInSide() {
                 </Link>
               </Grid>
             </Grid>
+            <div className={classes.placeholder}>
+              <Fade
+                in={loading}
+                style={{
+                  transitionDelay: loading ? '800ms' : '0ms',
+                }}
+                unmountOnExit
+              >
+                <CircularProgress />
+              </Fade>
+            </div>
             <Box mt={5}>
               <Copyright />
             </Box>
-            {(auth==='Success')?<Router>
+            {/* {(auth==='Success')?<Router>
                 <Switch>
                 <Route exact path="/Dashboard" component={Dashboard} />
                 <Redirect  to="/Dashboard" />
                 </Switch>
-              </Router>:<p></p>}
+              </Router>:<p></p>} */}
           </form>
         </div>
       </Grid>

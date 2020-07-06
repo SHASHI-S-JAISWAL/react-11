@@ -3,7 +3,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import { BrowserRouter as Router, Route, Redirect, Switch,Link,useHistory  } from "react-router-dom";
+import {/* BrowserRouter as Router, Route, Redirect, Switch,*/Link,useHistory  } from "react-router-dom";
 //import FormControlLabel from '@material-ui/core/FormControlLabel';
 //import Checkbox from '@material-ui/core/Checkbox';
 import Link1 from '@material-ui/core/Link';
@@ -15,7 +15,7 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import LoginService from '../services/LoginService';
 //import { RootRef } from '@material-ui/core';
-import Dashboard from './Dashboard';
+//import Dashboard from './Dashboard';
 import Fade from '@material-ui/core/Fade';
 import CircularProgress from '@material-ui/core/CircularProgress';
 
@@ -32,11 +32,6 @@ function Copyright() {
   );
 }
 
-function  navdash () {
-  
-    
-  
-}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -96,7 +91,7 @@ export default function SignInSide() {
 
   const [email, setEmail] = useState('');
   const [password,setPassword] = useState('');
-  const [auth,setAuth ] = useState(''); 
+  //const [auth,setAuth ] = useState(''); 
   const [loading, setLoading] = React.useState(false);
   const [nav,setNav] = React.useState(false);
   

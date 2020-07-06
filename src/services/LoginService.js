@@ -1,10 +1,12 @@
 import axios from 'axios';
 
 const LoginService = data => {
+  //const proxy = 'http://allow-any-origin.appspot.com/'
       try {
         let res = axios({
           method: 'post',
-          url: 'https://cors-anywhere.herokuapp.com/https://shashi-express-back-11.herokuapp.com/api/user/login',
+          //url: 'https://shashi-express-back-11.herokuapp.com/api/user/login',
+          url : 'https://shashi-express-back-11.herokuapp.com/api/user/login',
           data
         });
     

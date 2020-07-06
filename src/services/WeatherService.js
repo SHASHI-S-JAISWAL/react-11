@@ -5,7 +5,7 @@ const WeatherService =  async(loc) =>{
              const latitude= loc.features[0].center[1];
             const longitude= loc.features[0].center[0];
             //const url = 'https://api.weather.yandex.ru/v1/forecast?lat='+latitude+'&lon='+longitude+'&extra=true,';
-            const proxy = 'http://allow-any-origin.appspot.com/'
+            const proxy = 'https://allow-any-origin.appspot.com/'
             //const proxy = 'https://cors-anywhere.herokuapp.com/';
             //const url = `https://api.darksky.net/forecast/fd9d9c6418c23d94745b836767721ad1/${latitude},${longitude}`;
             //const proxy = 'https://cors-anywhere.herokuapp.com/';

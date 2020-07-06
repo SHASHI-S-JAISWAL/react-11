@@ -13,7 +13,7 @@ import './Dashboard.css';
 // import CardActions from '@material-ui/core/CardActions';
 // import CardContent from '@material-ui/core/CardContent';
 // import CardMedia from '@material-ui/core/CardMedia';
-import { BrowserRouter as Router, Route, Redirect, Switch ,Link as Link1 } from "react-router-dom";
+import { HashRouter as Router, Route, Redirect, Switch ,Link as Link1 } from "react-router-dom";
 import TodoApp from "./TodoApp" ;
 import Link from '@material-ui/core/Link';
 

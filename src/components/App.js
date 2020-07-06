@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Redirect, Switch  } from "react-router-dom";
+import { HashRouter as Router, Route, Redirect, Switch  } from "react-router-dom";
 import Login from './Login';
 import Registration from './Registration';
 import TodoApp from "./TodoApp";

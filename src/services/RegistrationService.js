@@ -5,7 +5,7 @@ export const UserRegistration = data => {
     
     return axios({
         method: 'post',
-        url: 'https://cors-anywhere.herokuapp.com/https://shashi-express-back-11.herokuapp.com/api/user/register',
+        url: 'https://shashi-express-back-11.herokuapp.com/api/user/register',
         data
       });
     //return axios.post('https://shashi-express-back-11.herokuapp.com/api/user/register', data)
